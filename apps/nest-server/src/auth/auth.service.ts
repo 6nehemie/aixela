@@ -123,8 +123,6 @@ export class AuthService {
     try {
       const { username } = await this.jwtService.verifyAsync(token);
 
-      console.log(username);
-
       user = await this.userService.findOne(username);
 
       user.isConfirmed = true;
